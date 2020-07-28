@@ -1,0 +1,37 @@
+{
+  "users": [
+    {"id": 1, "login": "hello1", "password": "1234", "type": "user", "tel": "123456789"},
+    {"id": 2, "login": "hello2", "password": "1234", "type": "user", "tel": "123456789"},
+    {"id": 3, "login": "hello3", "password": "1234", "type": "user", "tel": "123456789"},
+    {"id": 4, "login": "hello4", "password": "1234", "type": "user", "tel": "123456789"},
+    {"id": 5, "login": "hello5", "password": "1234", "type": "user", "tel": "123456789"}
+  ],
+  "contacs": [
+    {
+      "id": 1,
+      "owner": "hello1",
+      "contacs": ["hello2", "hello3", "hello4", "hello5"]
+    },
+    {
+      "id": 2,
+      "owner": "hello2",
+      "contacs": ["hello2", "hello1", "hello5"]
+    },
+    {
+      "id": 3,
+      "owner": "hello3",
+      "contacs": ["hello4", "hello5"]
+    },
+    {
+      "id": 4,
+      "owner": "hello4",
+      "contacs": ["hello2"]
+    },
+    {
+      "id": 5,
+      "owner": "hello5",
+      "contacs": []
+    }
+  ]
+
+}
