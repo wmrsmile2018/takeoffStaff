@@ -37,6 +37,7 @@ via npm run build
 ```
 cd takeoffStaff/project
 npm run build
+npm install -g serve
 serve -l 8080 -s dist
 ```
 

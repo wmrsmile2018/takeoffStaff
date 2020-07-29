@@ -35,8 +35,8 @@
     {
       "id": "1",
       "owner": "hello1",
-      "contact_name": "contact2",
-      "tel": "123456789"
+      "contact_name": "",
+      "tel": ""
     },
     {
       "id": "2",
