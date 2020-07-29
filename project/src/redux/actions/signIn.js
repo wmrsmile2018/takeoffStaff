@@ -1,4 +1,4 @@
-import { SIGN_IN } from '../../constants';
+ import { SIGN_IN } from '../../constants';
 
 export const SignInStart = () => ({
   type: `${SIGN_IN}_START`
