@@ -1,39 +1,52 @@
 ReactJs project
 
-##Installation:
-
-```
-npm install
-```
-
 ## Clone Project
 
 ```
 git clone https://github.com/wmrsmile2018/takeoffStaff.git
 ```
 
-##Run Project
+## Installation:
 
 ```
-cd project
+cd takeoffStaff/project/
 npm install
+```
+
+## Run Project
+
+via npm start
+
+```
+cd takeoffStaff/project/
 npm start
 ```
 
-##Run Json-server
-
-```
-cd db
-json-server --watch db.jso
+via npm build
 ```
 
-##To Visit App
+cd takeoffStaff/project
+npm build
+serve dist
+```
+
+## Run Json-server
+
+Json server work at localhost:3000
+
+```
+cd takeoffStaff/db/
+npm install -g json-server
+json-server --watch db.json
+```
+
+## To Visit App
 
 ```
 http://localhost:8080
 ```
 
-##Defalut users
+## Defalut users
 ```
 user1: {
   username: hello1
