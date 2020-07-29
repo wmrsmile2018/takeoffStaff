@@ -1,0 +1,48 @@
+.signIn {
+  height: 275px;
+  width: 600px;
+  padding-top: 20px;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background: radial-gradient(circle, #a5b1efc7 38%, #9cb2e4 99%);
+
+  .signIn__error {
+    font-size: 16px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    color: red;
+  }
+
+  .signIn__title {
+    font-size: 24px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  #signIn__form {
+    height: 145px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 15px;
+
+    .ant-form-item-label {
+      width: 90px;
+      .ant-form-item-required {
+        float: left;
+      }
+    }
+
+    .ant-form-item-control-input-content {
+      text-align: center;
+
+      button {
+        width: 50%;
+
+      }
+    }
+
+  }
+}

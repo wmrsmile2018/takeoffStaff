@@ -1,0 +1,102 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "hello1",
+      "password": "1234",
+      "type": "user"
+    },
+    {
+      "id": 2,
+      "login": "hello2",
+      "password": "1234",
+      "type": "user"
+    },
+    {
+      "id": 3,
+      "login": "hello3",
+      "password": "1234",
+      "type": "user"
+    },
+    {
+      "id": 4,
+      "login": "hello4",
+      "password": "1234",
+      "type": "user"
+    },
+    {
+      "id": 5,
+      "login": "hello5",
+      "password": "1234",
+      "type": "user"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "7",
+      "owner": "hello2",
+      "contact_name": "contact2",
+      "tel": "123456789"
+    },
+    {
+      "id": "8",
+      "owner": "hello2",
+      "contact_name": "contact3",
+      "tel": "123456789"
+    },
+    {
+      "id": "9",
+      "owner": "hello3",
+      "contact_name": "contact1",
+      "tel": "123456789"
+    },
+    {
+      "id": "10",
+      "owner": "hello3",
+      "contact_name": "contact2",
+      "tel": "123456789"
+    },
+    {
+      "id": "13",
+      "owner": "hello5",
+      "contact_name": "contact3",
+      "tel": "123456789"
+    },
+    {
+      "id": "14",
+      "owner": "hello3",
+      "contact_name": "contact1",
+      "tel": "123456789"
+    },
+    {
+      "id": "26f5ff6b-a1ef-4219-bc2c-2780083bf5b8",
+      "owner": "hello1",
+      "contact_name": "asda",
+      "tel": "asdasd"
+    },
+    {
+      "id": "40710de5-bda0-4fc3-a982-627954b00a9d",
+      "owner": "hello1",
+      "contact_name": "asda",
+      "tel": "asdasd1231"
+    },
+    {
+      "id": "4d553b14-10b3-4735-b07e-3819c91c2e08",
+      "owner": "hello1",
+      "contact_name": "asdad",
+      "tel": "asdad"
+    },
+    {
+      "id": "adeaa823-72c4-41c4-a6a4-c78ddd46178d",
+      "owner": "hello1",
+      "contact_name": "asdad",
+      "tel": "asdasd"
+    },
+    {
+      "id": "fba7902a-cb72-4a84-b438-4fcd39ce6067",
+      "owner": "hello1",
+      "contact_name": "asdads",
+      "tel": "asdasd"
+    }
+  ]
+}

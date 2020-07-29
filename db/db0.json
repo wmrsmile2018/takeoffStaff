@@ -1,0 +1,126 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "hello1",
+      "password": "1234",
+      "type": "user"
+    },
+    {
+      "id": 2,
+      "login": "hello2",
+      "password": "1234",
+      "type": "user"
+    },
+    {
+      "id": 3,
+      "login": "hello3",
+      "password": "1234",
+      "type": "user"
+    },
+    {
+      "id": 4,
+      "login": "hello4",
+      "password": "1234",
+      "type": "user"
+    },
+    {
+      "id": 5,
+      "login": "hello5",
+      "password": "1234",
+      "type": "user"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "1",
+      "owner": "hello1",
+      "contact_name": "contact2",
+      "tel": "123456789"
+    },
+    {
+      "id": "2",
+      "owner": "hello1",
+      "contact_name": "contact3",
+      "tel": "123456789"
+    },
+    {
+      "id": "3",
+      "owner": "hello1",
+      "contact_name": "contact4",
+      "tel": "123456789"
+    },
+    {
+      "id": "4",
+      "owner": "hello1",
+      "contact_name": "contact5",
+      "tel": "123456789"
+    },
+    {
+      "id": "5",
+      "owner": "hello1",
+      "contact_name": "contact6",
+      "tel": "123456789"
+    },
+    {
+      "id": "6",
+      "owner": "hello1",
+      "contact_name": "contact7",
+      "tel": "123456789"
+    },
+    {
+      "id": "7",
+      "owner": "hello2",
+      "contact_name": "contact2",
+      "tel": "123456789"
+    },
+    {
+      "id": "8",
+      "owner": "hello2",
+      "contact_name": "contact3",
+      "tel": "123456789"
+    },
+    {
+      "id": "9",
+      "owner": "hello3",
+      "contact_name": "contact1",
+      "tel": "123456789"
+    },
+    {
+      "id": "10",
+      "owner": "hello3",
+      "contact_name": "contact2",
+      "tel": "123456789"
+    },
+    {
+      "id": "11",
+      "owner": "hello4",
+      "contact_name": "contact5",
+      "tel": "123456789"
+    },
+    {
+      "id": "12",
+      "owner": "hello4",
+      "contact_name": "contact6",
+      "tel": "123456789"
+    },
+    {
+      "id": "13",
+      "owner": "hello5",
+      "contact_name": "contact3",
+      "tel": "123456789"
+    },
+    {
+      "id": "14",
+      "owner": "hello3",
+      "contact_name": "contact1",
+      "tel": "123456789"
+    },
+    {
+      "id": "15",
+      "owner": "hello4",
+      "contact_name": "contact2",
+      "tel": "123456789"
+    }
+  ]
+}
