@@ -22,11 +22,11 @@ cd takeoffStaff/project/
 npm start
 ```
 
-via npm build
+via npm run build
 ```
 
 cd takeoffStaff/project
-npm build
+npm run build
 serve dist
 ```
 
