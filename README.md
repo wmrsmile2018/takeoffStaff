@@ -13,10 +13,21 @@ cd takeoffStaff/project/
 npm install
 ```
 
+## Run Json-server
+
+Json server work at ```localhost:3000```
+
+```
+cd takeoffStaff/db/
+npm install -g json-server
+json-server --watch db.json -p 3000
+```
+
 ## Run Project
 
-via npm start
+Project work at ```localhost:8080```
 
+via npm start
 ```
 cd takeoffStaff/project/
 npm start
@@ -24,26 +35,9 @@ npm start
 
 via npm run build
 ```
-
 cd takeoffStaff/project
 npm run build
-serve dist
-```
-
-## Run Json-server
-
-Json server work at localhost:3000
-
-```
-cd takeoffStaff/db/
-npm install -g json-server
-json-server --watch db.json
-```
-
-## To Visit App
-
-```
-http://localhost:8080
+serve -l 8080 -s dist
 ```
 
 ## Defalut users
