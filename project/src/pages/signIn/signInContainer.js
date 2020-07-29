@@ -3,10 +3,13 @@ import { Form, Input, Button, Checkbox } from 'antd';
 import PropTypes from 'prop-types'; // ES6
 
 
-export const SignInContainer = ({onFinish, onFinishFailed}) => {
+export const SignInContainer = ({onFinish, onFinishFailed, error}) => {
     return (
       <>
         <p className="signIn__title"> Авторизация </p>
+          {error &&
+            <p className="signIn__error"> Такого пользователя не существует </p>
+          }
         <Form
          name="signIn__form"
          initialValues={{ remember: true }}
@@ -14,17 +17,17 @@ export const SignInContainer = ({onFinish, onFinishFailed}) => {
          onFinishFailed={onFinishFailed}
          >
          <Form.Item
-           label="Username"
-           name="signIn__username"
-           rules={[{ required: true, message: 'Please input your username!' }]}
+           label="Имя"
+           name="username"
+           rules={[{ required: true, message: 'Пожалуйста введите ваше имя!' }]}
          >
            <Input />
          </Form.Item>
 
          <Form.Item
-           label="Password"
-           name="signIn__password"
-           rules={[{ required: true, message: 'Please input your password!' }]}
+           label="Пароль"
+           name="password"
+           rules={[{ required: true, message: 'Пожалуйста введите ваш пароль!' }]}
          >
            <Input.Password />
          </Form.Item>
@@ -42,4 +45,5 @@ export const SignInContainer = ({onFinish, onFinishFailed}) => {
 SignInContainer.propTypes = {
   onFinish: PropTypes.func,
   onFinishFailed: PropTypes.func,
+  error: PropTypes.string,
 }

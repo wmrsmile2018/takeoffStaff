@@ -1,19 +1,25 @@
-import { SIGN_IN } = '../../constants';
+import { SIGN_IN } from '../../constants';
 
 export const SignInStart = () => ({
   type: `${SIGN_IN}_START`
 })
 
-export const SignInSuccess = () => ({
-  type: `${SIGN_IN}_SUCCESS`
+export const SignInSuccess = (data) => ({
+  type: `${SIGN_IN}_SUCCESS`,
+  payload: {
+    ...data[0]
+  }
 })
 
-export const SignInFail = () => ({
-  type: `${SIGN_IN}_FAIL`
+export const SignInFail = (error) => ({
+  type: `${SIGN_IN}_FAIL`,
+  payload: {
+    error
+  }
 })
 
-export const SignIn = ({username, password}) => ({
+export const SignInCall = ({username, password}) => ({
   type: `${SIGN_IN}`,
-  username: username,
-  password: password
+  username,
+  password
 })

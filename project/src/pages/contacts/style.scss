@@ -1,0 +1,54 @@
+.contacts {
+  height: 100%;
+  width: 100%;
+
+  .contacts__header {
+    height: 60px;
+    background: #63639a;
+    font-size: 20px;
+    color: white;
+    padding-top: 5px;
+    text-align: center;
+
+    .contacts__tittle {
+      display: inline;
+      h2 {
+        color: white;
+        margin-left: 10px;
+        display: inline;
+      }
+    }
+  }
+
+  .contacts__content {
+    height: 100%;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+    margin: 0 auto;
+
+
+
+    .contacts__addNew {
+      width: 300px;
+    }
+    .connects__data {
+      width: 450px;
+      .connects__data__tittle {
+        display: flex;
+        flex-direction: row;
+        .connects__name {
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .connects__phone {
+          font-weight: bold;
+          font-size: 14px;
+          margin-left: 168px;
+        }
+      }
+    }
+  }
+}

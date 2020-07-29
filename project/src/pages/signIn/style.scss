@@ -7,6 +7,13 @@
   margin-top: 100px;
   background: radial-gradient(circle, #a5b1efc7 38%, #9cb2e4 99%);
 
+  .signIn__error {
+    font-size: 16px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    color: red;
+  }
 
   .signIn__title {
     font-size: 24px;
@@ -19,14 +26,23 @@
     height: 145px;
     width: 500px;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 15px;
 
     .ant-form-item-label {
       width: 90px;
+      .ant-form-item-required {
+        float: left;
+      }
     }
 
-    button {
-      width: 100%;
+    .ant-form-item-control-input-content {
+      text-align: center;
+
+      button {
+        width: 50%;
+
+      }
     }
+
   }
 }

@@ -1,12 +1,11 @@
 import { createStore, compose, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 // import { sessionService } from 'redux-react-session';
-import createSagaMiddleware  from 'redux-saga';
-
-import { rootReducer } from './reducers/index';
+import { rootReducer } from './reducer/index';
 //
-// import { rootSaga } from './sagas/index';
+import { rootSaga } from './sagas/index';
 
-// const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&
@@ -16,19 +15,18 @@ const composeEnhancers =
 
 const configureStore = preloadedState => (
   createStore(
-    rootReducer
+    rootReducer,
+    preloadedState,
+    composeEnhancers(
+      applyMiddleware(sagaMiddleware)
+    ),
   )
 );
-
-
-// composeEnhancers(
-//   applyMiddleware(sagaMiddleware)
-// ),
 
 const store = configureStore({});
 
 
-// sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga)
 // sessionService.initSessionService(store);
 
 export default store;

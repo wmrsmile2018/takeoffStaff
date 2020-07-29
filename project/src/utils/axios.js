@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const instance = axios.create({
+export const instance = axios.create({
   timeout: 3000,
   withCredentials: false,
   headers: {
     'Accept': 'application/json',
-    'Content-Type': 'application/x-www-form-urlencoded',
+    'Content-Type': 'application/json',
     // 'Authorization': `Bearer ${document.cookie}`
   },
 });

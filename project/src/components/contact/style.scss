@@ -1,0 +1,39 @@
+.contact {
+  width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  float: right;
+
+  .ant-form {
+    display: flex;
+    flex-direction: row;
+
+    .ant-row:first-child {
+      margin-right: 27px;
+    }
+
+    .ant-row {
+      margin-bottom: 0!important;
+
+      .ant-input {
+        width: 170px;
+      }
+    }
+  }
+
+  .contact__name, .contact__tel {
+    width: 170px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .contact__buttons {
+    width: 55px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

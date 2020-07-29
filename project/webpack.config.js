@@ -1,6 +1,17 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 module.exports = {
+  devServer: {
+    port: 8080,
+    hot: true,
+    historyApiFallback: true,
+  },
+  output: {
+    publicPath: '/'
+  },
+  entry: './src/index.js',
   module: {
     rules: [
       {
@@ -34,17 +45,10 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    port: 8000
-  },
-  externals: {
-   react: 'commonjs react',
-  'react-dom': 'commonjs react-dom',
-  },
-  output: {
-   libraryTarget: 'commonjs2'
-  },
+
+
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       template: "./src/public/index.html",
       filename: "./index.html"
