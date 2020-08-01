@@ -5,7 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { ContactsContainer } from './contactsContainer';
 import getHistory from '../../utils/history';
-import { GetContactsCall, PostContactCall } from '../../redux/actions/contacts';
+import {
+  GetContactsCall,
+  PostContactCall,
+  SearchContactCall
+ } from '../../redux/actions/contacts';
 
 import './style.scss';
 
@@ -14,6 +18,10 @@ class Contacts extends Component {
     contacts: [],
     telephone: '',
     username: '',
+    name: '',
+    tel: '',
+    save: [],
+    isDisabled: false
   }
 
   componentDidMount = () => {
@@ -24,14 +32,29 @@ class Contacts extends Component {
     }
   }
 
-  componentDidUpdate = (prevProps) => {
-    const { contacts, user } = this.props;
+  componentDidUpdate = (prevProps, prevState) => {
+    const { contacts, user, search } = this.props;
     if (prevProps.contacts !== contacts) {
       this.setState({
-        contacts: contacts.contacts
+        save: contacts.contacts,
+        contacts: contacts.contacts,
+        isDisabled: !contacts.contacts.length
       })
     }
-
+    if (prevProps.search !== search) {
+      this.setState({
+        contacts: search
+      })
+    }
+    if(prevState !== this.state) {
+      if (!this.state.name
+        && !this.state.tel
+        && JSON.stringify(this.state.contacts) !== JSON.stringify(this.state.save)) {
+        this.setState({
+          contacts: this.state.save
+        })
+      }
+    }
   }
 
   onFinish = (values) => {
@@ -47,13 +70,24 @@ class Contacts extends Component {
     console.log('Failed:', errorInfo);
   };
 
+  handleOnChange = ({target}) => {
+    this.setState({ [target.name]: target.value })
+  }
+
+  handleOnSearch = () => {
+    const { tel, name } = this.state;
+    this.props.SearchContactCall({tel: tel, name: name})
+  }
+
   render() {
     const { user } = this.props;
-    const { contacts, telephone, username } = this.state;
+    const { contacts, telephone, username, isDisabled } = this.state;
     return (
       <div className="contacts">
         <ContactsContainer contacts={contacts} username={user.username}
           onFinish={this.onFinish} onFinishFailed={this.onFinishFailed}
+          isDisabled={isDisabled} handleOnChange={this.handleOnChange}
+          handleOnSearch={this.handleOnSearch}
         />
       </div>
     )
@@ -62,5 +96,6 @@ class Contacts extends Component {
 
 export default connect(state => ({
   user: state.user,
-  contacts: state.contacts
-}), { GetContactsCall, PostContactCall })(Contacts)
+  contacts: state.contacts,
+  search: state.contacts.search
+}), { GetContactsCall, PostContactCall, SearchContactCall })(Contacts)

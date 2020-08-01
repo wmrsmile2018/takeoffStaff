@@ -1,4 +1,10 @@
-import { GET_CONTACTS, DELETE_CONTACT, PATCH_CONTACT, POST_CONTACT } from '../../constants';
+import {
+   GET_CONTACTS,
+   DELETE_CONTACT,
+   PATCH_CONTACT,
+   POST_CONTACT,
+   SEARCH_CONTACT
+} from '../../constants';
 
 export const GetContactsStart = () => ({
   type: `${GET_CONTACTS}_START`
@@ -91,4 +97,26 @@ export const PostContactSuccess = (data) => ({
 
 export const PostContactFail = () => ({
   type: `${POST_CONTACT}_FAIL`
+})
+
+////////////////////////////////////////////////////////////////////////////////
+export const SearchContactCall = ({tel, name}) => ({
+  type: `${SEARCH_CONTACT}`,
+  tel,
+  name,
+})
+
+export const SearchContactStart = () => ({
+  type: `${SEARCH_CONTACT}_START`
+})
+
+// export const SearchContactSuccess = (data) => {
+//   console.log(data);
+// }
+//
+export const SearchContactSuccess = (data) => ({
+  type: `${SEARCH_CONTACT}_SUCCESS`,
+  payload: {
+    ...data
+  }
 })

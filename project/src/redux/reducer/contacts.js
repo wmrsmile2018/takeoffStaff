@@ -1,13 +1,32 @@
-import { GET_CONTACTS, DELETE_CONTACT, PATCH_CONTACT, POST_CONTACT } from '../../constants';
+import {
+  GET_CONTACTS,
+  DELETE_CONTACT,
+  PATCH_CONTACT,
+  POST_CONTACT,
+  SEARCH_CONTACT
+} from '../../constants';
 
 const initialState = {
   loading: false,
   contacts: [],
-  error: null
+  error: null,
+  search: []
+
 };
 
 export const contacts = function reducer(state = initialState, action) {
   switch (action.type) {
+    case `${SEARCH_CONTACT}_SUCCESS`:
+      return {
+        ...state,
+        search: action.payload.contacts,
+        loading: false
+      }
+    case `${SEARCH_CONTACT}_START`:
+      return {
+        ...state,
+        loading: true
+      }
     case `${POST_CONTACT}_SUCCESS`:
       return {
         ...state,

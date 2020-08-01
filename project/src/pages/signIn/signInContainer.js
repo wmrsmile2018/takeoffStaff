@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
-import PropTypes from 'prop-types'; // ES6
+import PropTypes from 'prop-types';
 
 
 export const SignInContainer = ({onFinish, onFinishFailed, error}) => {
@@ -46,4 +46,10 @@ SignInContainer.propTypes = {
   onFinish: PropTypes.func,
   onFinishFailed: PropTypes.func,
   error: PropTypes.string,
+}
+
+SignInContainer.defaultProps = {
+  onFinish: () => {},
+  onFinishFailed: () => {},
+  error: '',
 }

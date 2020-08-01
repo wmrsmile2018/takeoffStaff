@@ -29,10 +29,62 @@
     padding-top: 20px;
     margin: 0 auto;
 
+    .contacts__search {
 
+      .contacts__search__name {
+        display: flex;
+        flex-direction: row;
+        height: 32px;
+        margin-bottom: 24px;
+
+        .contacts__search__label {
+          width: 51px;
+        }
+
+        input {
+          width: 248px;
+        }
+      }
+
+      .contacts__search__tel {
+        display: flex;
+        flex-direction: row;
+        height: 32px;
+        margin-bottom: 24px;
+
+        .contacts__search__label {
+          width: 137px;
+        }
+
+        input {
+          width: 162px;
+        }
+      }
+
+      .contacts__search__title {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .contacts__search__label {
+        color: rgba(0, 0, 0, 0.85);
+        font-size: 14px;
+      }
+    }
 
     .contacts__addNew {
+      border-top: 1px solid #c3c3c3;
+      margin-top: 20px;
+      padding-top: 20px;
       width: 300px;
+
+      .contacts__addNew__title {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+
     }
     .connects__data {
       width: 450px;

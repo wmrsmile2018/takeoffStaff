@@ -1,14 +1,22 @@
-import { takeEvery, put, call } from 'redux-saga/effects';
+import { takeEvery, put, call, select } from 'redux-saga/effects';
 
 import {
   GetContactsStart, GetContactsSuccess, GetContactsFail,
   DeleteContactFail, DeleteContactStart, DeleteContactSuccess,
   PatchContactStart, PatchContactSuccess, PatchContactFail,
-  PostContactStart, PostContactSuccess, PostContactFail
+  PostContactStart, PostContactSuccess, PostContactFail,
+  SearchContactStart, SearchContactSuccess, SearchContactFail
 } from '../actions/contacts';
 import getHistory from '../../utils/history';
 import { instance } from '../../utils/axios';
-import { GET_CONTACTS, DELETE_CONTACT, PATCH_CONTACT, POST_CONTACT, host } from '../../constants';
+import {
+   GET_CONTACTS,
+   DELETE_CONTACT,
+   PATCH_CONTACT,
+   POST_CONTACT,
+   SEARCH_CONTACT,
+   host
+} from '../../constants';
 
 
 function* getContacts(action) {
@@ -73,9 +81,25 @@ function* postContact(action) {
   }
 }
 
+function* searchContact(action) {
+  yield put(SearchContactStart());
+  const state = yield select();
+  let contacts = state.contacts.contacts
+  if (action.tel) {
+    contacts = contacts.map(val => (val.tel.substring(0, action.tel.length) === action.tel ? val : null)).filter(val => val)
+  }
+  if (action.name) {
+    contacts = contacts.map(val => (val.contact_name.substring(0, action.name.length) === action.name ? val : null)).filter(val => val)
+  }
+  yield put(SearchContactSuccess({contacts: contacts}));
+}
+
+
+
 export function* watchContacts() {
   yield takeEvery(`${GET_CONTACTS}`, getContacts);
   yield takeEvery(`${DELETE_CONTACT}`, deleteContact);
   yield takeEvery(`${PATCH_CONTACT}`, patchContact);
   yield takeEvery(`${POST_CONTACT}`, postContact);
+  yield takeEvery(`${SEARCH_CONTACT}`, searchContact);
 }
